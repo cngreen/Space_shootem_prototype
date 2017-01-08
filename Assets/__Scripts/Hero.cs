@@ -24,7 +24,9 @@ public class Hero : MonoBehaviour {
 	void Awake(){
 		S = this;
 		bounds = Utils.CombineBoundsOfChildren (this.gameObject);
+	}
 
+	void Start(){
 		ClearWeapons ();
 		weapons [0].SetType (WeaponType.blaster);
 	}

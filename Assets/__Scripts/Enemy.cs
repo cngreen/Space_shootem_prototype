@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
 	public float health = 10;
 	public int score = 100;
 	public int showDamageForFrame = 2;
+	public float powerUpDropChance = 1f;
 	public bool _________________________;
 
 	public Bounds bounds;
@@ -80,6 +81,7 @@ public class Enemy : MonoBehaviour {
 			ShowDamage ();
 			health -= Main.W_DEFS [p.type].damageOnHit;
 			if (health <= 0) {
+				Main.S.ShipDestroyed (this);
 				Destroy (this.gameObject);
 			}
 			Destroy (other);
