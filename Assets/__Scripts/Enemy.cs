@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour {
 	public int remainingDamageFrames = 0;
 
 	void Awake(){
+		//print ("hi from enemy");
 		materials = Utils.GetAllMaterials (gameObject);
 		originalColors = new Color[materials.Length];
 		for (int i = 0; i < materials.Length; i++) {
@@ -67,6 +68,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision coll){
+		print ("hey");
 		GameObject other = coll.gameObject;
 		switch (other.tag) {
 		case "ProjectileHero":
