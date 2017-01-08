@@ -15,13 +15,6 @@ public class Main : MonoBehaviour {
 	public WeaponType[] activeWeaponTypes;
 	public float enemySpawnRate;
 
-	void Start(){
-		activeWeaponTypes = new WeaponType[weaponDefinitions.Length];
-		for (int i = 0; i < weaponDefinitions.Length; i++) {
-			activeWeaponTypes [i] = weaponDefinitions [i].type;
-		}
-	}
-
 	void Awake(){
 		S = this;
 		Utils.SetCameraBounds (this.GetComponent<Camera> ());
@@ -38,8 +31,14 @@ public class Main : MonoBehaviour {
 		if (W_DEFS.ContainsKey (wt)) {
 			return (W_DEFS [wt]);
 		}
-
 		return (new WeaponDefinition ());
+	}
+
+	void Start(){
+		activeWeaponTypes = new WeaponType[weaponDefinitions.Length];
+		for (int i = 0; i < weaponDefinitions.Length; i++) {
+			activeWeaponTypes [i] = weaponDefinitions [i].type;
+		}
 	}
 
 	public void SpawnEnemy(){
