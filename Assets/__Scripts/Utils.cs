@@ -12,10 +12,10 @@ public class Utils : MonoBehaviour {
 	
 	public static Bounds BoundsUnion(Bounds b0, Bounds b1){
 		if (b0.size == Vector3.zero && b1.size != Vector3.zero) {
-			return (b0);
+			return (b1);
 		}
 		else if (b0.size != Vector3.zero && b1.size == Vector3.zero) {
-			return (b1);
+			return (b0);
 		}
 		else if (b0.size == Vector3.zero && b1.size == Vector3.zero) {
 			return (b0);
