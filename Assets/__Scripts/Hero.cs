@@ -57,6 +57,7 @@ public class Hero : MonoBehaviour {
 	public GameObject lastTriggerGo = null;
 
 	void OnTriggerEnter(Collider other){
+		print ("hero trigger enter");
 		GameObject go = Utils.FindTaggedParent (other.gameObject);
 
 		if (go != null) {

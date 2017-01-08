@@ -68,7 +68,6 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision coll){
-		print ("hey");
 		GameObject other = coll.gameObject;
 		switch (other.tag) {
 		case "ProjectileHero":
